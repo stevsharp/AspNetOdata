@@ -4,7 +4,6 @@ Brief description of your ASP.NET Core OData project.
 
 ## Overview
 
-Explain the purpose and functionality of your ASP.NET Core OData service. Provide a brief introduction to OData and its benefits in your project. Mention any key features that make your OData service unique.
 
 ## Prerequisites
 
