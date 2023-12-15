@@ -36,11 +36,6 @@ OData clients can often generate client-side code based on the metadata exposed 
 Simplified CRUD Operations:
 OData provides a standardized way to perform Create, Read, Update, and Delete (CRUD) operations on data. This consistency makes it easier for developers to understand and implement these common operations.
 
-Security:
-OData services can leverage standard HTTP security mechanisms, such as HTTPS and authentication headers, to ensure the security of data during transmission.
-
-In summary, OData simplifies data communication, promotes standardization, and improves the efficiency of building and consuming RESTful APIs. It is particularly useful in scenarios where data needs to be shared and consumed by different applications and platforms.
-
 ## Prerequisites
 
 Specify any prerequisites that users need to have installed or set up before using your project. Include things like:
