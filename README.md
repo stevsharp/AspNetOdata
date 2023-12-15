@@ -25,21 +25,37 @@ Provide instructions on how to get started with your ASP.NET Core OData service.
 
 ## OData Endpoints
 
-List and explain the key OData endpoints available in your service. Include examples of how users can interact with these endpoints, including filtering, sorting, and querying.
+Includes examples of how users can interact with these endpoints, including filtering, sorting, and querying.
 
 ## Configuration
 
-Explain any configuration options users may need to set up for the ASP.NET Core OData service. Include details on configuration files or environment variables.
-
 ## Console Client
 
-If applicable, provide information on the console client that makes use of Simple.OData.Client to interact with your OData service. Include instructions on how to run the console client.
+using Simple.OData.Client;
 
-## Usage
+try
+{
+    var client = new ODataClient("https://localhost:7003/odata/");
 
-Provide examples and instructions on how to use your ASP.NET Core OData service. Include sample OData queries and responses.
+    var products = await client
+            .For<Product>()
+            .Expand(x=>x.Brand)
+            .FindEntriesAsync();
+
+    foreach (var product in products)
+    {
+        Console.WriteLine(product.Brand.Name);
+    }
+
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
+Console.ReadLine();
 
 ### Example:
 
-```http
-GET /api/products?$filter=category eq 'Electronics'&$orderby=price desc
+http
+https://localhost:7003/api/Product?$expand=Brand
