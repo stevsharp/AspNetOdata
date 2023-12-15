@@ -1,6 +1,6 @@
 # ASP.NET Core OData Project
 
-Brief description of your ASP.NET Core OData project.
+A gentle introduction of ASP.NET Core OData project.
 
 ## Overview
 
