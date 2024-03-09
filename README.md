@@ -107,7 +107,7 @@ Includes examples of how users can interact with these endpoints, including filt
 
 ## Configuration
 
-## Console Client
+## Console Client and Blazor WebAssembly 
 
 using Simple.OData.Client;
 
