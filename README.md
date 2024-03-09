@@ -49,11 +49,9 @@ Specify any prerequisites that users need to have installed or set up before usi
 Provide instructions on how to get started with your ASP.NET Core OData service. Include steps such as:
 
 1. Clone the repository: `git clone # ASP.NET Core OData Project
-
 A gentle introduction of ASP.NET Core OData project.
 
 ## Overview
-
 OData (Open Data Protocol) is a standardized protocol for building and consuming RESTful APIs. Here are some key benefits of using OData:
 
 Uniform Interface:
