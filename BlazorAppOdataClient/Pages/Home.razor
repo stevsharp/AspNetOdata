@@ -1,0 +1,33 @@
+﻿@page "/"
+
+<PageTitle>Testing Odata With Blazor</PageTitle>
+
+
+<button class="btn btn-primary" @onclick="GetData">Click to get ODATA</button>
+
+@if (products == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Brand</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in products)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Description</td>
+                    <td>@product.Brand.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
