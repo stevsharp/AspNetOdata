@@ -44,7 +44,7 @@ builder.Services.AddDbContextPool<EClinicContext>((serviceProvider, optionsBuild
                 errorNumbersToAdd: null);
             sqlOptions.CommandTimeout(300);
 
-        }).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+        }).UseQueryTrackingBehavior(QueryTrackingBehavior.TrackAll);
 });
 
 var app = builder.Build();

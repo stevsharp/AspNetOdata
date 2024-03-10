@@ -4,8 +4,11 @@ namespace BlazorAppOdataClient.Pages
 {
     public partial class Home
     {
-        ODataClient client = new ODataClient("https://localhost:7003/odata/");
-        IEnumerable<Product> products;
+        protected ODataClient client = new ODataClient("https://localhost:7003/odata/");
+        protected IEnumerable<Product> products;
+
+        protected string errorMessage = string.Empty;
+
         private async Task GetData()
         {
             try
@@ -18,6 +21,10 @@ namespace BlazorAppOdataClient.Pages
             }
             catch (Exception ex)
             {
+                errorMessage = string.Empty;
+
+                errorMessage = ex.Message;
+
                 Console.WriteLine(ex.Message);
             }
 
@@ -33,14 +40,47 @@ namespace BlazorAppOdataClient.Pages
                         .Expand(x => x.Brand)
                         .FindEntryAsync();
 
-                products = new List<Product>()
-                {
-                    product
-                };
+
+                await this.GetData();
+                
+            }
+            catch (Exception ex)
+            {
+                errorMessage = string.Empty;
+
+                errorMessage = ex.Message;
+
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+
+        private async Task CreateProduct()
+        {
+            try
+            {
+                var product = await client
+                    .For<Product>()
+                    .Set(new 
+                    {
+                        Barcode = "Test",
+                        Description = "Test",
+                        ImageDataUrl = "Test",
+                        Name = "Test",  
+                        Rate = 1,
+                        BrandId = 1
+                    })
+                    .InsertEntryAsync();
+
+                await this.GetData();
 
             }
             catch (Exception ex)
             {
+                errorMessage = string.Empty;
+
+                errorMessage = ex.Message;
+
                 Console.WriteLine(ex.Message);
             }
 
