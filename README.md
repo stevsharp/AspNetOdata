@@ -178,3 +178,7 @@ Console.ReadLine();
 
 http
 https://localhost:7003/api/Product?$expand=Brand
+
+## Connect with Me
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)](https://www.linkedin.com/in/spyros-ponaris-913a6937/)
